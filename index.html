@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello, world!</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="description" content=""/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+    <script src="counterNumbers.js"></script>
+    <style>
+        body {
+            background-color: #000000;
+            color: white;
+        }
+
+        div {
+            /*font-size: 56px;*/
+        }
+
+        /* should be monospaced font*/
+        #example1 {
+            border: 0px solid red;
+            font-family: "Courier New";
+        }
+    </style>
+</head>
+<body>
+<script>
+
+	$(document).ready(function () {
+		setTimeout(function () {
+			$("#example1").counterNumbers("66 505 Ft");
+		}, 2000);
+		setTimeout(function () {
+			$("#example1").counterNumbers("69 605 Ft");
+		}, 4000);
+		setTimeout(function () {
+			$("#example1").counterNumbers("demo ended...");
+		}, 6000);
+
+	});
+</script>
+
+<div id="example1" style="text-align:center">66 500 Ft</div>
+</body>
+</html>
