@@ -1,10 +1,11 @@
 (function ($) {
     var counterInProgress = false;
-    if (counterInProgress) {
-        setTimeout(() => this.counterNumbers(newText), 1000);
-        return;
-    }
     $.fn.counterNumbers = function (newText) {
+        if (counterInProgress) {
+            setTimeout(() => this.counterNumbers(newText), 1000);
+            return;
+        }
+        counterInProgress=true;
         let CHAR_NBSP = String.fromCharCode(160);
         this.text(this.text().trim());
         lengthOld = this.text().length;
@@ -35,7 +36,6 @@
                 if (newText.length % 2 === 0 && newText.length === lengthOld) break;
             }
         }
-        counterInProgress = true;
         let correctedText = this.text();
         this.text(correctedText.replace(/ /g, CHAR_NBSP));
         let originalNumber = this.text();
